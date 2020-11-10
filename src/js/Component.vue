@@ -5,8 +5,7 @@
     <div
       role="alert"
       v-show="isActive"
-      class="v-toast__item"
-      :class="[`v-toast__item--${type}`, `v-toast__item--${position}`]"
+      :class="[ classWrapper, `v-toast__item--${type}`, `v-toast__item--${position}`]"
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
       @click="whenClicked">
@@ -62,6 +61,10 @@
       pauseOnHover: {
         type: Boolean,
         default: true
+      },
+      classWrapper: {
+        type: String,
+        default: 'v-toast__item'
       },
     },
     data() {
